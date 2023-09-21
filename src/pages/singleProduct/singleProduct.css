@@ -1,0 +1,193 @@
+/* view image */
+.image-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 200px;
+    height: auto;
+}
+
+.overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.full-image {
+    max-width: 50%;
+    height: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+/* end view image */
+
+.sProductSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 85vw;
+    padding: 2rem 5rem;
+    margin: 0 auto;
+}
+
+.display {
+    display: none;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.sImgDiv {
+    max-width: 450px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border-radius: 22px;
+    box-shadow: 0 0 2px 2px #123123;
+
+}
+
+.sImgDiv img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.smallContainer {
+    display: flex;
+}
+
+.smallContainer .sImg {
+    width: 100%;
+    height: 100%;
+}
+
+.smallContainer .sImg:hover {
+    scale: 1.2;
+}
+
+.small,
+.big {
+    max-width: 420px;
+    margin: 2px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.small {
+    max-width: 80px;
+    height: 80px;
+}
+
+.button {
+    background: url(../../photo/button-bg2.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.button:active {
+    scale: 0.9;
+}
+
+.bold {
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.rate {
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 12px;
+}
+
+.rate:hover {
+    color: #34825f;
+}
+
+.rateBoard,
+.thank {
+    display: none;
+    position: absolute;
+    background-color: #34825f;
+    text-align: center;
+    top: 38%;
+    left: 17%;
+    z-index: 1;
+    padding: 1.5rem 1.5rem 1rem 1rem;
+    border-radius: 8px;
+    transition: display 1s;
+}
+
+
+.fa-xmark {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.fa-xmark:hover {
+    opacity: 0.7;
+}
+
+.fa-star {
+    margin-top: 0.5rem;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+@media (max-width : 1200px) {
+    .sProductSection {
+        width: 100vw;
+        padding: 1rem;
+    }
+}
+
+@media (max-width : 930px) {
+    .sProductSection {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sProductDescriptionDiv {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .instock {
+        display: block;
+        margin: 0.8rem 0.5rem;
+    }
+
+    .rateBoard,
+    .thank {
+        left: 35%;
+    }
+}
+
+@media (max-width : 576px) {
+    .full-image {
+        max-width: 90%;
+        height: auto;
+    }
+}

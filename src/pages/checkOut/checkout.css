@@ -1,0 +1,18 @@
+/* checkout page */
+.inputStyle {
+    border-radius: 12px;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    padding: 0.6rem;
+    max-width: 500px;
+}
+
+.cNumberContainer {
+    width: 75%;
+    justify-content: center;
+}
+
+.z {
+    z-index: 9999;
+}
