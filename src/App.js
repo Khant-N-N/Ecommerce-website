@@ -3,25 +3,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/homePage";
 import Context from "./components/context";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Products from "./pages/productsPage";
-import { useEffect, useReducer, useState } from "react";
+import { Suspense, lazy, useEffect, useReducer, useState } from "react";
 import useFetchData from "./components/fetchData";
 import SingleProductPage from "./pages/singleProduct/singleProductPage";
 import Error from "./components/error";
 import Footer from "./components/footer";
 import InfoCards from "./components/infoCards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpLong, faXmark } from "@fortawesome/free-solid-svg-icons";
-import ShoppingCart from "./pages/ShoppingCart";
-import Favourite from "./pages/favouritePage";
+import { faUpLong, faXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import SignUpInfo from "./components/signUpInfo";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Login } from "./pages/loginPage";
 import { Register } from "./pages/registerPage";
 import { initialState, reducer } from "./components/reducerValues";
 import { CheckOut } from "./pages/checkOut/checkoutPage";
-import ContactUs from "./pages/contactUs";
 import "./styles.css";
+const Products = lazy(() => import("./pages/productsPage"))
+const Favourite = lazy(() => import("./pages/favouritePage"))
+const ShoppingCart = lazy(() => import("./pages/ShoppingCart"))
+const ContactUs = lazy(() => import("./pages/contactUs"))
 
 
 
@@ -122,17 +122,23 @@ function App() {
 
           }
           <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={< Products />} />
-            <Route path="/shop/:id" element={< SingleProductPage />} />
-            <Route path="/favourite" element={< Favourite />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/delivery" />
-            <Route path="/cart" element={<ShoppingCart />} />
-            <Route path="/checkout" element={<CheckOut />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
+          <Suspense fallback={
+            <div className="w-100 text-center load">
+              <FontAwesomeIcon className="loader" icon={faSpinner} />
+            </div>}>
+
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={< Products />} />
+              <Route path="/shop/:id" element={< SingleProductPage />} />
+              <Route path="/favourite" element={< Favourite />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/delivery" />
+              <Route path="/cart" element={<ShoppingCart />} />
+              <Route path="/checkout" element={<CheckOut />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
         <hr />
         <button className={`btn scrollTopBut ${state.display ? "" : "display"}`} onClick={handleScrollTop}><FontAwesomeIcon icon={faUpLong} fontSize={20} /></button>
