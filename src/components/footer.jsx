@@ -33,11 +33,11 @@ const Footer = () => {
         </div>
         <div className="text-center mt-2">
           <FontAwesomeIcon icon={faPhone} />
-          <span> +959xxxxxxxxx</span>
+          <span> +959421182623</span>
         </div>
         <div className="text-center mt-2">
           <FontAwesomeIcon icon={faEnvelope} />
-          <span> xxx@gmail.com</span>
+          <span> khantnyinyi.magnet@gmail.com</span>
         </div>
       </div>
 

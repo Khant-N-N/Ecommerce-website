@@ -146,14 +146,6 @@ function NavBar() {
                 >
                   Contact Us
                 </NavLink>
-
-                <NavLink
-                  onClick={handleClose}
-                  to="/delivery"
-                  className="mt-2 fs-5 ms-3 pt-2 fw-bolder link text-center"
-                >
-                  Delivery details
-                </NavLink>
               </Nav>
               <FontAwesomeIcon
                 title="Dark/Light mode"

@@ -133,7 +133,6 @@ function App() {
               <Route path="/shop/:id" element={< SingleProductPage />} />
               <Route path="/favourite" element={< Favourite />} />
               <Route path="/contact" element={<ContactUs />} />
-              <Route path="/delivery" />
               <Route path="/cart" element={<ShoppingCart />} />
               <Route path="/checkout" element={<CheckOut />} />
               <Route path="*" element={<Error />} />
