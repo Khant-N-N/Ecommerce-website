@@ -1,5 +1,5 @@
 #Live Demo
-https://gla-ecommerce-knn.netlify.app
+[EcommerceWeb](https://gla-ecommerce.netlify.app/)
 
 # Getting Started with Create React App
 
