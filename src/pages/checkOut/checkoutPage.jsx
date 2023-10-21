@@ -6,6 +6,7 @@ import Context from "../../components/context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { DeliveryForm } from "./DeliveryForm";
+import { Link } from "react-router-dom";
 
 export const CheckOut = () => {
   const { state, loading, products } = useContext(Context);
@@ -86,12 +87,15 @@ export const CheckOut = () => {
         }}
       >
         <div
-          className="d-flex justify-content-around w-75 pt-2"
+          className="d-flex justify-content-between w-75 pt-2"
           style={{ cursor: "pointer" }}
           onClick={() => setDisplay(!display)}
         >
           <h4>Order Summary</h4>
           <FontAwesomeIcon className="mt-1" icon={faChevronDown} />
+          <Link to="/cart" className="color text-none">
+            Edit cart
+          </Link>
         </div>
         <hr className="w-75" />
         <div className={`w-75 ${display ? "" : "display"}`}>
