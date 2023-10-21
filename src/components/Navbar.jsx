@@ -48,9 +48,9 @@ function NavBar() {
         className="bg-body-tertiary mb-3 navBar"
       >
         <Container fluid>
-          <Navbar.Brand href="#">
+          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
             <img src={logo} alt="logo" className="logo" />
-          </Navbar.Brand>
+          </Link>
           <div className="d-flex">
             <FontAwesomeIcon
               className={`me-2 p-2 rounded mt-1 dl-but-s ${
@@ -185,7 +185,7 @@ function NavBar() {
                       icon={faCircle}
                       color="#30911f"
                       className="position-absolute dl-but-l"
-                      style={{ top: "23", right: "70" }}
+                      style={{ top: "23", right: "73" }}
                       fontSize={13}
                     />
                   ) : (

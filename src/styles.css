@@ -166,6 +166,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .popularitems {
     display: flex;
     overflow-x: scroll;
+    scroll-behavior: smooth;
     white-space: nowrap;
     width: 85%;
 }

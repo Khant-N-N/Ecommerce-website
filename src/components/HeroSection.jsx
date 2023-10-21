@@ -52,7 +52,11 @@ const HeroSection = () => {
           <span className="color">daily needs items</span> here :
         </h3>
         <div className="d-shadow mt-3 w-100 d-flex justify-content-center">
-          <Link to="/shop" className="link">
+          <Link
+            to="/shop"
+            className="link"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <span className="designButton font">Shop Now</span>
           </Link>
         </div>
